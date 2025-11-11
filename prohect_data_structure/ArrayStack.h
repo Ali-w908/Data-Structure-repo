@@ -61,6 +61,11 @@ public:
 	int getCount() const {
 		return top + 1;
 	}
+	void print() const {
+		for (int i = top; i >= 0; i--) {
+			cout << items[i] << ",";
+		}
+	}
 }; // end ArrayStack
 
 #endif

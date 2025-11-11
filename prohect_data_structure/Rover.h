@@ -1,15 +1,16 @@
 #pragma once
 #include <string>
-
+#include <iostream>
+using namespace std;
 enum RoverType { NR, PR, DR }; // Normal, Polar, Drill
 
 class Rover {
 private:
-    int ID;
-    RoverType type;
-    int speed; // km/h
-    int missionsBeforeCheckup;
-    int checkupDuration; // in days
+    const int ID;
+    const RoverType type;
+    const int speed; // km/h
+    const int missionsBeforeCheckup;
+    const int checkupDuration; // in days
     int missionsCompleted;
     int availableDay;
     bool inCheckup;
@@ -33,4 +34,4 @@ public:
     // === Utility ===
     bool needsCheckup() const;
 };
-
+ostream& operator<<(ostream& out, Rover* R);

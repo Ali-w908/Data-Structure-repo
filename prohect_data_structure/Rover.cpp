@@ -22,3 +22,8 @@ void Rover::incrementMissions() { missionsCompleted++; }
 bool Rover::needsCheckup() const {
     return missionsCompleted >= missionsBeforeCheckup;
 }
+ostream& operator<<(ostream& out, Rover* R)
+{
+    out << R->getID();
+    return out;
+}

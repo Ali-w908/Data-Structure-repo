@@ -68,7 +68,15 @@ public:
         }
         return count;
     }
-
- 
+    void print()
+    {
+        priNode<T>* current = head;
+        int pri=0;
+        while (current) {
+            cout << current->getItem(pri);
+            cout<< ", " << -pri << "days,";
+            current = current->getNext();
+        }
+    }
 
 };

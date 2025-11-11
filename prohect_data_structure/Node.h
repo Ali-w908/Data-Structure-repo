@@ -5,8 +5,8 @@ template<typename T>
 class Node
 {
 private:
-    T item;              // العنصر
-    Node<T>* next;       // مؤشر للعقدة التالية
+    T item;              
+    Node<T>* next; 
 
 public:
     Node() : next(nullptr) {}

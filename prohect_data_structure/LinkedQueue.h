@@ -61,6 +61,7 @@ public:
 	bool dequeue(T& frntEntry);
 	bool peek(T& frntEntry)  const;
 	int getCount() const;
+	void print() const;
 	~LinkedQueue();
 };
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -175,15 +176,15 @@ LinkedQueue<T>::~LinkedQueue()
 {
 	//Note that the cout statements here is just for learning purpose
 	//They should be normally removed from the destructor
-	cout << "\nStarting LinkedQueue destructor...";
-	cout << "\nFreeing all nodes in the queue...";
+	//cout << "\nStarting LinkedQueue destructor...";
+	//cout << "\nFreeing all nodes in the queue...";
 
 	//Free all nodes in the queue
 	T temp;
 	while (dequeue(temp));
 
-	cout << "\n Is LinkedQueue Empty now?? ==> " << boolalpha << isEmpty();
-	cout << "\nEnding LinkedQueue destructor..." << endl;
+	//cout << "\n Is LinkedQueue Empty now?? ==> " << boolalpha << isEmpty();
+	//cout << "\nEnding LinkedQueue destructor..." << endl;
 }
 template <typename T>
 int LinkedQueue<T>::getCount() const
@@ -196,5 +197,16 @@ int LinkedQueue<T>::getCount() const
 	}
 	return count;
 }
+
+template <typename T>
+void LinkedQueue<T>::print() const
+{
+	Node<T>* current = frontPtr;
+	while (current) {
+		cout << current->getItem() << ", ";
+		current = current->getNext();
+	}
+}
+
 
 #endif

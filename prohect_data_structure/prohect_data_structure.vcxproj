@@ -124,7 +124,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ArrayStack.h" />
-    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="abortRequest.h" />
+    <ClInclude Include="newRequest.h" />
     <ClInclude Include="LinkedQueue.h" />
     <ClInclude Include="MarsStation.h" />
     <ClInclude Include="Mission.h" />
@@ -137,16 +138,19 @@
     <ClInclude Include="Request.h" />
     <ClInclude Include="Rover.h" />
     <ClInclude Include="StackADT.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="abortRequest.cpp" />
     <ClCompile Include="MarsStation.cpp" />
     <ClCompile Include="Mission.cpp" />
+    <ClCompile Include="newRequest.cpp" />
     <ClCompile Include="OUT_missions.cpp" />
     <ClCompile Include="RDY_NM.cpp" />
     <ClCompile Include="Request.cpp" />
     <ClCompile Include="Rover.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
