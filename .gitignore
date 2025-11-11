@@ -1,0 +1,95 @@
+# ---- Build artifacts ----
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.exp
+*.pdb
+*.idb
+*.obj
+*.o
+*.lo
+*.slo
+
+# ---- Intermediate files ----
+*.ilk
+*.iobj
+*.ipdb
+*.rsp
+*.pch
+*.pchi
+*.pdb
+*.tlog/
+*.cache
+*.tmp
+*.log
+*.sdf
+*.VC.db
+*.VC.VC.opendb
+*.opensdf
+*.db
+*.opendb
+
+# ---- Visual Studio specific ----
+.vs/
+.vscode/
+*.user
+*.suo
+*.ncb
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+*.aps
+
+# ---- Build system ----
+[CMakeFiles]/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+build/
+out/
+x64/
+x86/
+Debug/
+Release/
+*.VCXPROJ.user
+*.VCXPROJ.filters
+
+# ---- Backup and OS files ----
+*~
+*.swp
+*.bak
+*.tmp
+*.old
+*.orig
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ---- Package managers ----
+# vcpkg
+vcpkg_installed/
+.vcpkg-root
+
+# Conan
+.conan/
+
+# ---- Other ----
+# Ignore generated documentation, if any
+docs/html/
+docs/build/
+
+# Ignore custom temp or cache directories
+temp/
+.cache/
