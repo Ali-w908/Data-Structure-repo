@@ -1,4 +1,5 @@
 #include "abortRequest.h"
+#include "MarsStation.h"
 
 abortRequest::abortRequest(int xday, int id) :Request(id), XD(xday)
 {
@@ -6,6 +7,8 @@ abortRequest::abortRequest(int xday, int id) :Request(id), XD(xday)
 
 void abortRequest::Operate(MarsStation* station)
 {
+    // Abort is only for Normal Missions
+    station->abortMission(getMissionID());
 }
 ostream& abortRequest::print(ostream& out)
 {

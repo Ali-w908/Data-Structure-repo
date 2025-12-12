@@ -71,5 +71,9 @@ public:
     //void checkMissionsForAbort(int currentDay);
     //Rover* assignRoverToMission(Mission* mission);
     //void assignReadyMissions();
-
+    void abortMissionTest(int ID);
+    void abortMission(int ID);  // Abort a Normal mission by ID
+    void autoAbortPM();         // AutoAbort PM waiting more than 2x duration
+    void writeOutputFile(string filename);
+    int getTime() const { return time; }  // get current simulation day
 };
