@@ -383,16 +383,17 @@ void MarsStation::assignPM()
         RDY_PM_list.dequeue(m);
         Avail_PR.dequeue(r);
     }
-    else if(!Avail_DR.isEmpty())
-    {
-        RDY_PM_list.dequeue(m);
-        Avail_DR.dequeue(r);
-	}
     else if(!Avail_NR.isEmpty())
     {
         RDY_PM_list.dequeue(m);
         Avail_NR.dequeue(r);
 	}
+    else if(!Avail_DR.isEmpty())
+    {
+        RDY_PM_list.dequeue(m);
+        Avail_DR.dequeue(r);
+	}
+    
     if (r && m)
     {
         m->calculateWdays(time);
@@ -413,16 +414,6 @@ void MarsStation::assignDM()
         RDY_DM_list.dequeue(m);
         Avail_DR.dequeue(r);
     }
-    else if (!Avail_NR.isEmpty())
-    {
-        RDY_DM_list.dequeue(m);
-        Avail_NR.dequeue(r);
-    }
-    else if (!Avail_PR.isEmpty())
-    {
-        RDY_DM_list.dequeue(m);
-        Avail_PR.dequeue(r);
-    }
     if (r && m)
     {
         m->calculateWdays(time);
@@ -442,11 +433,6 @@ void MarsStation::assignNM()
     {
         RDY_NM_list.dequeue(m);
         Avail_NR.dequeue(r);
-    }
-    else if (!Avail_DR.isEmpty())
-    {
-        RDY_NM_list.dequeue(m);
-        Avail_DR.dequeue(r);
     }
     else if (!Avail_PR.isEmpty())
     {
@@ -633,8 +619,7 @@ void MarsStation::writeOutputFile(string filename)
         if (m->getTdays() == 0 && m->getAssignedRover() == nullptr)
         {
             // Tdays = Fday - Rday - Wdays
-            int tdays = m->getFday() - m->getRday() - m->getWdays();
-            m->setTdays(tdays);
+			m->calculateTdays(m->getAssignedRover()->getSpeed());
         }
         
         output << m->getFday() << "\t" << m->getID() << "\t" 
